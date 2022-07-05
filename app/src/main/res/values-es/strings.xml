@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="logn">acceso</string>
+    <string name="enter_name">introduzca su nombre</string>
+    <string name="enter_pwd">introducir la contraseña</string>
+</resources>

@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Cognizantapp</string>
+    <string name="logn">login</string>
+    <string name="enter_name">enter your name</string>
+    <string name="enter_pwd">enter password</string>
 </resources>
