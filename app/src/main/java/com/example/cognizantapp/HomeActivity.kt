@@ -18,12 +18,12 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home) //inflating of activity_home.xml file --layout inflater
         contactEditText = findViewById(R.id.etContact)
-        conTextView = findViewById(R.id.tvContact)
+     /*   conTextView = findViewById(R.id.tvContact)
         //getintent() will return the intent which started this home activity
             //if(intent.extras != null) {
         var name = intent.extras?.getString("keyn")
         conTextView.text = name
-
+*/
     }
 
 
@@ -40,9 +40,13 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setContactText() {
-        var myStudent = Student("ansari", 123, 345f);
-        var contact = contactEditText.text.toString()
-        conTextView.text = contact
+       //var myStudent = Student("ansari", 123, 345f);
+        var contact = contactEditText.text.toString()//2
+        var intent = Intent()
+        intent.putExtra("conkey",contact)
+        setResult(RESULT_OK,intent)
+        finish()
+        //conTextView.text = contact
     }
 
     fun startTimer(message: String, seconds: Int) {

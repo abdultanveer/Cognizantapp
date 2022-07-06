@@ -1,5 +1,6 @@
 package com.example.cognizantapp;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btnCancel:
                // Toast.makeText(this, "cancelling", Toast.LENGTH_SHORT).show();
-                Intent dialIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:1234567"));
+                Intent dialIntent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:1234567")); //implicit intent --you're not divulging the name of the class to be invoked
 
                 startActivity(dialIntent);
                 break;
@@ -41,15 +42,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startHomeActivity() {
-        Student abdul = new Student("ansari",123,432.0f);
+       /* Student abdul = new Student("ansari",123,432.0f);
         Employee ansari = new Employee("abdul",111,456);
         String name = nameEditText.getText().toString();
         // Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
-        // resultTv.setText(name);
-        Intent homeIntent = new Intent(this,HomeActivity.class);
-        homeIntent.putExtra("keyn",name);
-        startActivity(homeIntent);
+        // resultTv.setText(name);*/
+        Intent homeIntent = new Intent(this,HomeActivity.class); //explicit intent -- faster
+       // homeIntent.putExtra("keyn",name);
+      //  startActivity(homeIntent);
+        startActivityForResult(homeIntent,123); //1
     }
 
+    @Override//3
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent dataIntent) {
+        super.onActivityResult(requestCode, resultCode, dataIntent);
 
+        if(resultCode == RESULT_OK) {
+            String contact = dataIntent.getExtras().getString("conkey");
+            resultTv.setText(contact);
+        }
+
+    }
 }
