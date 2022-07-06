@@ -1,7 +1,9 @@
 package com.example.cognizantapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.AlarmClock
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -30,7 +32,8 @@ class HomeActivity : AppCompatActivity() {
         when(clickedView.id){
             R.id.btnContact ->{setContactText()}
             R.id.btnGallery -> {
-                Toast.makeText(this,"gallery open",Toast.LENGTH_SHORT).show()
+                startTimer("milk boiled",10)
+                //Toast.makeText(this,"gallery open",Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -41,4 +44,16 @@ class HomeActivity : AppCompatActivity() {
         var contact = contactEditText.text.toString()
         conTextView.text = contact
     }
+
+    fun startTimer(message: String, seconds: Int) {
+        val intent = Intent(AlarmClock.ACTION_SET_TIMER).apply {
+            putExtra(AlarmClock.EXTRA_MESSAGE, message)
+            putExtra(AlarmClock.EXTRA_LENGTH, seconds)
+            putExtra(AlarmClock.EXTRA_SKIP_UI, true)
+        }
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }
+    }
+
 }
