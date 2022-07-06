@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 //billion dollar mistake -- null pointer exception
 class HomeActivity : AppCompatActivity() {
@@ -26,7 +27,17 @@ class HomeActivity : AppCompatActivity() {
 
 
     fun contactHandler(clickedView: View) {
-        var myStudent = Student("ansari",123,345f);
+        when(clickedView.id){
+            R.id.btnContact ->{setContactText()}
+            R.id.btnGallery -> {
+                Toast.makeText(this,"gallery open",Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    }
+
+    private fun setContactText() {
+        var myStudent = Student("ansari", 123, 345f);
         var contact = contactEditText.text.toString()
         conTextView.text = contact
     }
