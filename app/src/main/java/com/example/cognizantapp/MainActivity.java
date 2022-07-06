@@ -23,10 +23,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickHandler(View clickedView) {
-       /* String name = nameEditText.getText().toString();
+        Student abdul = new Student("ansari",123,432.0f);
+        Employee ansari = new Employee("abdul",111,456);
+       String name = nameEditText.getText().toString();
        // Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
-        resultTv.setText(name);*/
+       // resultTv.setText(name);
         Intent homeIntent = new Intent(this,HomeActivity.class);
+        homeIntent.putExtra("keyn",name);
         startActivity(homeIntent);
 
     }

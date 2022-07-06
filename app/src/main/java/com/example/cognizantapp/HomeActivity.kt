@@ -16,14 +16,17 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home) //inflating of activity_home.xml file --layout inflater
         contactEditText = findViewById(R.id.etContact)
         conTextView = findViewById(R.id.tvContact)
-        var a = 10
-        var name : String = "abdul"
-        //var b:Int = 20
+        //getintent() will return the intent which started this home activity
+            //if(intent.extras != null) {
+        var name = intent.extras?.getString("keyn")
+        conTextView.text = name
+
     }
 
 
 
     fun contactHandler(clickedView: View) {
+        var myStudent = Student("ansari",123,345f);
         var contact = contactEditText.text.toString()
         conTextView.text = contact
     }
