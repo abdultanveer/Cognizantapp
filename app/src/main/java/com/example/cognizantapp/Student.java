@@ -1,7 +1,8 @@
 package com.example.cognizantapp;
-
+//heap memory
 public class Student {
-    String studentName;
+    public static String COLLEGE_NAME = "iit"; //class memory
+    String studentName;   //partitions -- instance variable
     int studentAge;
     float stipend;
 
@@ -12,6 +13,7 @@ public class Student {
     }
 
     public String getStudentName() {
+        int c = 10 + 20; // c is a local variable
         return studentName;
     }
 
@@ -20,7 +22,8 @@ public class Student {
     }
 
     public int getStudentAge() {
-        return studentAge;
+        String studentAge; //local variable
+        return this.studentAge; //partition
     }
 
     public void setStudentAge(int studentAge) {

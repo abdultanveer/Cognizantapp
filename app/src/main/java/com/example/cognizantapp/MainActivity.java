@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     public  static String TAG = MainActivity.class.getSimpleName();
     EditText nameEditText; //declaration
     TextView resultTv;
-    int a;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main); //inflating of activity_main.xml file
         nameEditText = findViewById(R.id.etName); //initialization
         resultTv = findViewById(R.id.tvResult);
-        a = 10;
+        //a = 10;
         Log.i(TAG,"im in onCreate");
 
     }
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.i(TAG,"im in onstart");
+        throw new NullPointerException("i am crashing in onstart");
     }
 
     @Override
@@ -95,7 +96,10 @@ public class MainActivity extends AppCompatActivity {
     @Override//3
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent dataIntent) {
         super.onActivityResult(requestCode, resultCode, dataIntent);
-
+        Student abdul = new Student("ansari",123,345.0f);//ansari,123,345 -- args
+        /*abdul.setStudentName("ansari");
+        abdul.setStudentAge(123);
+        abdul.setStipend(345.0f);*/
         if(resultCode == RESULT_OK) {
             String contact = dataIntent.getExtras().getString("conkey");
             resultTv.setText(contact);
