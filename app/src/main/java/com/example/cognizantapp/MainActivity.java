@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         Log.i(TAG,"im in onstart");
-        throw new NullPointerException("i am crashing in onstart");
     }
 
     @Override
@@ -82,15 +81,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startHomeActivity() {
-       /* Student abdul = new Student("ansari",123,432.0f);
-        Employee ansari = new Employee("abdul",111,456);
-        String name = nameEditText.getText().toString();
-        // Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
-        // resultTv.setText(name);*/
+
         Intent homeIntent = new Intent(this,HomeActivity.class); //explicit intent -- faster
-       // homeIntent.putExtra("keyn",name);
-      //  startActivity(homeIntent);
-        startActivityForResult(homeIntent,123); //1
+
+        int a = 10;
+        int b = a +20;
+        add(a,b);
+        //startActivityForResult(homeIntent,123); //1
+        throw new NullPointerException("i am crashing in onstart");
+    }
+
+    private void add(int a, int b) {
+        Log.v(TAG,"a ="+a);
+
+        int f = a*b;
+        f++;
+       int z = f*10;
     }
 
     @Override//3
