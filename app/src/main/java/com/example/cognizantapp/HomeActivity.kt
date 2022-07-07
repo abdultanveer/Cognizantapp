@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -18,6 +19,8 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home) //inflating of activity_home.xml file --layout inflater
         contactEditText = findViewById(R.id.etContact)
+       var myStudent: Student? =   intent.getParcelableExtra<Student>("sabdul")
+        Log.i(TAG, myStudent.toString())
      /*   conTextView = findViewById(R.id.tvContact)
         //getintent() will return the intent which started this home activity
             //if(intent.extras != null) {
@@ -59,5 +62,10 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    companion object {
+        var TAG = HomeActivity::class.java.simpleName
+    }
+
 
 }
