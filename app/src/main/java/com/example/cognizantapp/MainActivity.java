@@ -3,6 +3,7 @@ package com.example.cognizantapp;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener {
     public  static String TAG = MainActivity.class.getSimpleName();
     EditText nameEditText; //declaration
     TextView resultTv;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); //inflating of activity_main.xml file
         nameEditText = findViewById(R.id.etName); //initialization
+        nameEditText.setOnFocusChangeListener(this);
         resultTv = findViewById(R.id.tvResult);
         //a = 10;
         Log.i(TAG,"im in onCreate");
@@ -113,4 +115,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    public void onFocusChange(View view, boolean isFocussed) {
+        if(isFocussed){
+            Toast.makeText(this, "focus", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this, "lost focus", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
 }
