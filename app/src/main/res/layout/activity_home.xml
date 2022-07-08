@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="34dp"
         android:layout_marginTop="47dp"
+        android:layout_marginBottom="142dp"
         android:ems="10"
         android:hint="enter contact details"
         android:inputType="textPersonName"
@@ -41,13 +42,25 @@
 
     <Button
         android:id="@+id/btnGallery"
-        android:onClick="contactHandler"
-
         android:layout_width="wrap_content"
+
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"
         android:layout_marginTop="40dp"
+        android:onClick="contactHandler"
         android:text="gallery"
         app:layout_constraintStart_toEndOf="@+id/etContact"
+        app:layout_constraintTop_toBottomOf="@+id/etContact" />
+
+    <ListView
+        android:id="@+id/lvLanguages"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etContact" />
 </androidx.constraintlayout.widget.ConstraintLayout>

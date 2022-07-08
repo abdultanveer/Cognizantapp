@@ -6,19 +6,28 @@ import android.os.Bundle
 import android.provider.AlarmClock
 import android.util.Log
 import android.view.View
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 
 //billion dollar mistake -- null pointer exception
 class HomeActivity : AppCompatActivity() {
     lateinit var contactEditText: EditText
     lateinit var conTextView: TextView
+    lateinit var  languagesListView: ListView
+    var languages = arrayOf("english","french","arabic")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home) //inflating of activity_home.xml file --layout inflater
         contactEditText = findViewById(R.id.etContact)
+        languagesListView = findViewById(R.id.lvLanguages)
+        var adapter = ArrayAdapter<String>(this,
+           // android.R.layout.simple_list_item_1,
+            //android.R.id.text1,
+            R.layout.listview_row,
+            R.id.tvRow,
+            languages) //putting data into adapter
+        languagesListView.adapter = adapter //setting adapter on socket
+
        var myStudent: Student? =   intent.getParcelableExtra<Student>("sabdul")
         Log.i(TAG, myStudent.toString())
      /*   conTextView = findViewById(R.id.tvContact)

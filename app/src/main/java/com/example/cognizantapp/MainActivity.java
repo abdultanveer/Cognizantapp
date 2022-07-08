@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-
+        //switch (view.getId())
         String type = adapterView.getItemAtPosition(position).toString();
         Toast.makeText(this, type+"--position ="+position, Toast.LENGTH_SHORT).show();
     }
