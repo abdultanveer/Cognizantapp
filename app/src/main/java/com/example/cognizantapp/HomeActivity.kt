@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.util.Log
+import android.view.ContextMenu
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 
@@ -14,11 +17,14 @@ class HomeActivity : AppCompatActivity() {
     lateinit var conTextView: TextView
     lateinit var  languagesListView: ListView
     var languages = arrayOf("english","french","arabic")
+    lateinit var btnGallery: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home) //inflating of activity_home.xml file --layout inflater
-        contactEditText = findViewById(R.id.etContact)
+        btnGallery = findViewById(R.id.btnGallery)
+        registerForContextMenu(btnGallery)
+       /* contactEditText = findViewById(R.id.etContact)
         languagesListView = findViewById(R.id.lvLanguages)
         var adapter = ArrayAdapter<String>(this,
            // android.R.layout.simple_list_item_1,
@@ -29,7 +35,7 @@ class HomeActivity : AppCompatActivity() {
         languagesListView.adapter = adapter //setting adapter on socket
 
        var myStudent: Student? =   intent.getParcelableExtra<Student>("sabdul")
-        Log.i(TAG, myStudent.toString())
+        Log.i(TAG, myStudent.toString())*/
      /*   conTextView = findViewById(R.id.tvContact)
         //getintent() will return the intent which started this home activity
             //if(intent.extras != null) {
@@ -38,6 +44,46 @@ class HomeActivity : AppCompatActivity() {
 */
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+         super.onCreateOptionsMenu(menu)
+        var mi = menuInflater
+        mi.inflate(R.menu.home_menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+         super.onOptionsItemSelected(item)
+        when(item.itemId){
+            R.id.settingsmi -> {
+                Toast.makeText(this,"settings",Toast.LENGTH_SHORT).show()
+            }
+            R.id.logoutmi -> {
+                Toast.makeText(this,"logging out",Toast.LENGTH_SHORT).show()
+
+            }
+        }
+
+        return true
+    }
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu?,
+        v: View?,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+        menuInflater.inflate(R.menu.btn_context_menu,menu)
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+         super.onContextItemSelected(item)
+        when(item.itemId){
+            R.id.editmi -> {
+                Toast.makeText(this,"opening to edit",Toast.LENGTH_SHORT).show()
+            }
+        }
+        return true
+    }
 
 
     fun contactHandler(clickedView: View) {

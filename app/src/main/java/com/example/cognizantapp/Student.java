@@ -11,9 +11,11 @@ public class Student  implements Parcelable {
     float stipend;
 
     public Student(String studentName, int studentAge, float stipend) {
+       final int salary = 5000;
         this.studentName = studentName;
         this.studentAge = studentAge;
         this.stipend = stipend;
+       // salary = 6000;
     }
 
     public Student(Parcel parcel){
