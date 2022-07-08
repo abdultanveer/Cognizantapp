@@ -9,14 +9,17 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener {
+public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener, AdapterView.OnItemSelectedListener {
     public  static String TAG = MainActivity.class.getSimpleName();
     EditText nameEditText; //declaration
     TextView resultTv;
+    Spinner mSpinner;
 
 
     @Override
@@ -26,6 +29,8 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
         nameEditText = findViewById(R.id.etName); //initialization
         nameEditText.setOnFocusChangeListener(this);
         resultTv = findViewById(R.id.tvResult);
+        mSpinner = findViewById(R.id.spinner);
+        mSpinner.setOnItemSelectedListener(this);
         //a = 10;
         Log.i(TAG,"im in onCreate");
 
@@ -127,4 +132,15 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
         }
     }
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
+
+        String type = adapterView.getItemAtPosition(position).toString();
+        Toast.makeText(this, type+"--position ="+position, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
 }
