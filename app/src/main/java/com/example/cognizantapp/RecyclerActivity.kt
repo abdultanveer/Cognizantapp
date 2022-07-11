@@ -11,13 +11,24 @@ class RecyclerActivity : AppCompatActivity() {
         "pizza","burger","ice cream","pizza","burger","ice cream","pizza","burger","ice cream",
         "pizza","burger","ice cream","pizza","burger","ice cream","pizza","burger","ice cream",
         "pizza","burger","ice cream","pizza","burger","ice cream","pizza","burger","ice cream",
+        "pizza","burger","ice cream","pizza","burger","ice cream","pizza","burger","ice cream",
+        "pizza","burger","ice cream","pizza","burger","ice cream","pizza","burger","ice cream",
+        "pizza","burger","ice cream","pizza","burger","ice cream","pizza","burger","ice cream",
+        "pizza","burger","ice cream","pizza","burger","ice cream","pizza","burger","ice cream",
+        "pizza","burger","ice cream","pizza","burger","ice cream","pizza","burger","ice cream",
+        "pizza","burger","ice cream","pizza","burger","ice cream","pizza","burger","ice cream",
+        "pizza","burger","ice cream","pizza","burger","ice cream","pizza","burger","ice cream",
+        "pizza","burger","ice cream","pizza","burger","ice cream","pizza","burger","ice cream",
+        "pizza","burger","ice cream","pizza","burger","ice cream","pizza","burger","ice cream",
         )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
         menuRecyclerView = findViewById(R.id.menuRecyclerview)
         menuRecyclerView.layoutManager = LinearLayoutManager(this)
-        var adapter = DishAdapter(dishes)
+        var adapter: DishAdapter = DishAdapter(dishes)
+
+
         menuRecyclerView.adapter = adapter
     }
 }
