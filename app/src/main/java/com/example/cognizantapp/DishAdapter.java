@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 //holder = reserve
 //DishAdapter.DishViewHolder = inner class
-public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder> {
+public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder>  {
     public static String TAG = DishAdapter.class.getSimpleName();
 
     /*private static ClickListener clickListener;
@@ -43,6 +43,13 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder
         Log.i(TAG,"christian- is writing"+ dishes[position]);
         //holder.dishTextView.getText();
         holder.dishTextView.setText(dishes[position]);
+        holder.dishTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "--"+dishes[position], Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
     }
 
@@ -55,20 +62,18 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder
 
 
 
-    public class DishViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+    public class DishViewHolder extends RecyclerView.ViewHolder  {
         TextView dishTextView;
         public DishViewHolder(@NonNull View nicholasPlank) {
             super(nicholasPlank);
-            nicholasPlank.setOnClickListener(this);
+           // nicholasPlank.setOnClickListener(this);
             Log.i(TAG,"david- vh got the plank");
             dishTextView = nicholasPlank.findViewById(R.id.tvCuisine);
 
         }
 
-        @Override
-        public void onClick(View view) {
-            Toast.makeText(itemView.getContext(), "view click--"+getAdapterPosition(), Toast.LENGTH_SHORT).show();
-        }
+
 
        /* @Override
         public void onClick(View view) {
