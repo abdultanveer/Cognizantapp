@@ -46,7 +46,7 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.DishViewHolder
         holder.dishTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "--"+dishes[position], Toast.LENGTH_SHORT).show();
+                Toast.makeText(view.getContext(), "havells appliance--"+dishes[position], Toast.LENGTH_SHORT).show();
             }
         });
 

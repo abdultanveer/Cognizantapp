@@ -3,16 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/drawable/gradient_box.xml" value="0.1785" />
         <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1065" />
+        <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/drawable/ic_menu_camera.xml" value="0.162" />
         <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/activity_home.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/activity_nav_drawer.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/activity_recycler.xml" value="0.13632246376811594" />
+        <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/activity_tabbed.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/app_bar_nav_drawer.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/calculator_constraint_layout.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/calculator_linear_layout.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/content_nav_drawer.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/fragment_tabbed.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/listview_row.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/nav_header_nav_drawer.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/layout/row_plank.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/menu/activity_main_drawer.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/menu/btn_context_menu.xml" value="0.17447916666666666" />
         <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/menu/home_menu.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/HII/AndroidStudioProjects/Cognizantapp/app/src/main/res/menu/nav_drawer.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/HII/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.17552083333333332" />
       </map>
     </option>

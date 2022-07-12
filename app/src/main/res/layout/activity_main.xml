@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mybackground"
+    android:background="@drawable/gradient_box"
     tools:context=".MainActivity">
 
     <EditText
@@ -81,4 +81,5 @@
         app:layout_constraintBottom_toBottomOf="@id/etName"
         app:layout_constraintStart_toEndOf="@id/etName"
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
