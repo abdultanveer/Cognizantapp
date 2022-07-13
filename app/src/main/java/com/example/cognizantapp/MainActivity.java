@@ -88,13 +88,8 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
     }
 
     private void startHomeActivity() {
-        Student abdul = new Student("ansari",123,765.0f);
-        Intent homeIntent = new Intent(this,HomeActivity.class); //explicit intent -- faster
-        homeIntent.putExtra("sabdul",abdul);
-        startActivity(homeIntent);
-        int a = 10;
-        int b = a +20;
-        add(a,b);
+       String name = nameEditText.getText().toString();
+       resultTv.setText(name);
         //startActivityForResult(homeIntent,123); //1
        // throw new NullPointerException("i am crashing in onstart");
     }
