@@ -4,6 +4,7 @@
     package="com.example.cognizantapp">
 
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -16,34 +17,34 @@
         android:theme="@style/Theme.Cognizantapp"
         tools:targetApi="31">
         <activity
-            android:name=".NavDrawerActivity"
-
-            android:exported="true"
-            android:label="@string/title_activity_nav_drawer"
-            android:theme="@style/Theme.Cognizantapp.NoActionBar">
-
-        </activity>
-        <activity
-            android:name=".TabbedActivity"
-            android:exported="true"
-            android:label="@string/title_activity_tabbed"
-            android:theme="@style/Theme.Cognizantapp.NoActionBar">
-
-        </activity>
-        <activity
-            android:name=".RecyclerActivity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".HomeActivity"
-            android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" >
+            android:name=".DemoActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".NavDrawerActivity"
+            android:exported="true"
+            android:label="@string/title_activity_nav_drawer"
+            android:theme="@style/Theme.Cognizantapp.NoActionBar"></activity>
+        <activity
+            android:name=".TabbedActivity"
+            android:exported="true"
+            android:label="@string/title_activity_tabbed"
+            android:theme="@style/Theme.Cognizantapp.NoActionBar"></activity>
+        <activity
+            android:name=".RecyclerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
         </activity>
     </application>
 

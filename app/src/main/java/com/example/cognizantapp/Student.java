@@ -9,6 +9,9 @@ public class Student  implements Parcelable {
     String studentName;   //partitions -- instance variable
     int studentAge;
     float stipend;
+    private String dob;
+
+    public Student(){}
 
     public Student(String studentName, int studentAge, float stipend) {
        final int salary = 5000;
@@ -16,6 +19,19 @@ public class Student  implements Parcelable {
         this.studentAge = studentAge;
         this.stipend = stipend;
        // salary = 6000;
+    }
+
+    private String getDob(){
+        return dob;
+    }
+
+    public int getAge(){
+        String dob = getDob();
+        return 123;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
     public Student(Parcel parcel){
