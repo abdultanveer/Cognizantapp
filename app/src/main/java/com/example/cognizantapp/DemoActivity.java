@@ -7,8 +7,11 @@ import androidx.core.app.NotificationManagerCompat;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.util.Base64;
 import android.view.View;
 import android.webkit.WebView;
@@ -39,10 +42,18 @@ public class DemoActivity extends AppCompatActivity {
     public void showNotification(View view) {
         createNotificationChannel();
 
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+
+      /*  SmsManager manager = SmsManager.getDefault();
+        manager.sendTextMessage("5556","5554","happy birthday",null,null);
+      */
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "CHANNEL_ID")
                 .setSmallIcon(R.drawable.ic_menu_camera)
                 .setContentTitle("textTitle notification")
                 .setContentText("textContent notification")
+                .setContentIntent(pendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         Notification mynotification = builder.build();
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);

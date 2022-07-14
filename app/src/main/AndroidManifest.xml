@@ -4,7 +4,7 @@
     package="com.example.cognizantapp">
 
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -17,7 +17,7 @@
         android:theme="@style/Theme.Cognizantapp"
         tools:targetApi="31">
         <activity
-            android:name=".DemoActivity"
+            android:name=".AsyncActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,15 +26,20 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".DemoActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
             android:name=".NavDrawerActivity"
             android:exported="true"
             android:label="@string/title_activity_nav_drawer"
-            android:theme="@style/Theme.Cognizantapp.NoActionBar"></activity>
+            android:theme="@style/Theme.Cognizantapp.NoActionBar" />
         <activity
             android:name=".TabbedActivity"
             android:exported="true"
             android:label="@string/title_activity_tabbed"
-            android:theme="@style/Theme.Cognizantapp.NoActionBar"></activity>
+            android:theme="@style/Theme.Cognizantapp.NoActionBar" />
         <activity
             android:name=".RecyclerActivity"
             android:exported="true" />
@@ -43,9 +48,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
     </application>
 
 </manifest>
