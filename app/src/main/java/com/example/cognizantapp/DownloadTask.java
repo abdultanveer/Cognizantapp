@@ -3,6 +3,7 @@ package com.example.cognizantapp;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 import android.widget.ProgressBar;
 
 //String -- input type, Integer = progress type, Bitmap = result type
@@ -13,10 +14,23 @@ public class DownloadTask extends AsyncTask<String,Integer, Bitmap> {
         mProgressBar = progressBar;
     }
 
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        mProgressBar.setVisibility(View.VISIBLE);
+    }
+
     @Override //this method will execute on a background thread
     protected Bitmap doInBackground(String... strings) {
-        Log.i(TAG, "downloading--"+strings[0]);
-        publishProgress(50);
+        Log.i(TAG, "downloading--" + strings[0]);
+        for (int i = 1; i < 21; i++){
+            publishProgress(i*5);
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         return null;
     }
 
@@ -24,5 +38,11 @@ public class DownloadTask extends AsyncTask<String,Integer, Bitmap> {
     protected void onProgressUpdate(Integer... values) {
         super.onProgressUpdate(values);
         mProgressBar.setProgress(values[0]);
+    }
+
+    @Override
+    protected void onPostExecute(Bitmap bitmap) {
+        super.onPostExecute(bitmap);
+        mProgressBar.setVisibility(View.INVISIBLE);
     }
 }
