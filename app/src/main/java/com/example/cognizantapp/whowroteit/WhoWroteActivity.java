@@ -17,6 +17,8 @@ TextView mTitleText,mAuthorText;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_who_wrote);
         mBookInput = findViewById(R.id.bookInput);
+        mTitleText = findViewById(R.id.titleText);
+        mAuthorText = findViewById(R.id.authorText);
     }
 
     public void searchBooks(View view) {
