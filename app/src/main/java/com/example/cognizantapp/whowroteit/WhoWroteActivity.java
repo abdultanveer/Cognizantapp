@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.cognizantapp.R;
 
 public class WhoWroteActivity extends AppCompatActivity {
 EditText mBookInput;
+TextView mTitleText,mAuthorText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +21,6 @@ EditText mBookInput;
 
     public void searchBooks(View view) {
         String queryString = mBookInput.getText().toString();
-
-
+        new FetchBook(mTitleText, mAuthorText).execute(queryString);
     }
 }

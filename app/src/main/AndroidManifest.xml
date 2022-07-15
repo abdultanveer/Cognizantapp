@@ -18,7 +18,7 @@
         android:theme="@style/Theme.Cognizantapp"
         tools:targetApi="31">
         <activity
-            android:name=".WhoWroteActivity"
+            android:name=".whowroteit.WhoWroteActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,11 +39,7 @@
         <activity
             android:name=".AsyncActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".DemoActivity"
