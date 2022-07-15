@@ -2,6 +2,7 @@ package com.example.cognizantapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -18,5 +19,10 @@ public class AsyncActivity extends AppCompatActivity {
     public void downloadHandler(View view) {
         DownloadTask dTask = new DownloadTask(progressBar);
         dTask.execute("https://www.imageurl.com");
+    }
+
+    public void invokeHandler(View view) {
+        Intent rIntent = new Intent("tomcruise.isin.your.BUILDING");
+        startActivity(rIntent);
     }
 }

@@ -5,7 +5,7 @@
 
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
     <application
         android:allowBackup="true"
@@ -17,13 +17,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cognizantapp"
         tools:targetApi="31">
+        <activity
+            android:name=".WhoWroteActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <receiver
             android:name=".SmsReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SMS_RECEIVED"></action>
-
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
 
@@ -38,7 +47,7 @@
         </activity>
         <activity
             android:name=".DemoActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".NavDrawerActivity"
             android:exported="true"
