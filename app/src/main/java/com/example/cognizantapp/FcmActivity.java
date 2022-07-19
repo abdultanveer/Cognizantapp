@@ -3,9 +3,12 @@ package com.example.cognizantapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ComponentName;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -75,6 +78,27 @@ public static String TAG = FcmActivity.class.getSimpleName();
     public void serviceHandler(View view) {
         Intent servIntent = new Intent(FcmActivity.this,MyService.class);
         servIntent.putExtra("musicname","somemusic.mp3");
-        startService(servIntent);
+        //startService(servIntent);//create a service
+       // stopService(servIntent);
+        bindService(servIntent,serviceConnection,BIND_AUTO_CREATE);
+        //unbindService(serviceConnection);
     }
+
+    ServiceConnection serviceConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder mBinder) {
+            MyService.LocalBinder binder = (MyService.LocalBinder) mBinder;
+           // MyService myService = new MyService();
+           MyService myService =  binder.getService();
+          int randomNo = myService.getRandomNumber();
+          Log.i(TAG,"the otp is --"+randomNo);
+          Log.i(TAG,myService.getWeatherJson("texas"));
+
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+
+        }
+    };
 }
