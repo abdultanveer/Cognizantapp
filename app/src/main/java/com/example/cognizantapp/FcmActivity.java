@@ -3,6 +3,7 @@ package com.example.cognizantapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -69,5 +70,11 @@ public static String TAG = FcmActivity.class.getSimpleName();
        String prefs = preferences.getString("pkey","");
         //put it back into the edittext
         prefsEditText.setText(prefs);
+    }
+
+    public void serviceHandler(View view) {
+        Intent servIntent = new Intent(FcmActivity.this,MyService.class);
+        servIntent.putExtra("musicname","somemusic.mp3");
+        startService(servIntent);
     }
 }
