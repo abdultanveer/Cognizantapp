@@ -7,11 +7,16 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 import android.view.View;
+import android.widget.CursorAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,7 +31,21 @@ public static String TAG = FcmActivity.class.getSimpleName();
         setContentView(R.layout.activity_fcm);
         prefsEditText = findViewById(R.id.etPrefs);
     }
-//singleton design pattern
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        ListView cpListView = findViewById(R.id.cpListview);
+        Uri uriEntries = Uri.parse("content://com.demo.user.provider/users");
+        String[] from = new String[]{"title","subtitle"};
+        int[] to = new int[]{android.R.id.text1,android.R.id.text2};
+        Cursor cursor = getContentResolver().query(uriEntries, null, null, null, null);
+        CursorAdapter adapter = new SimpleCursorAdapter(this,
+                android.R.layout.simple_list_item_2,cursor,from,to);
+        cpListView.setAdapter(adapter);
+    }
+
+    //singleton design pattern
     public void getToken(View view) {
 
         FirebaseMessaging.getInstance().getToken().addOnCompleteListener(
